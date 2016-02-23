@@ -1,0 +1,411 @@
+\documentclass[10pt,oneside]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{ifthen}
+
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+
+% Enter all the information here
+
+% Personal Information
+\newcommand{ \name}{Chien-Wei Lan}
+\newcommand{ \addr}{2593, Heron Ct, San Jose, CA, 95133}
+\newcommand{ \homephone}{}
+\newcommand{ \cellphone}{669)2587-542 (mobile)}
+\newcommand{ \email}{bluebluebluelan@gmail.com}
+\newcommand{ \homepage}{}
+
+% Objective
+\newcommand{\ObjectiveShow}{show}
+\newcommand{\Objective}{To leverage my 5+ years of computer network,  embedded system and linux kernel experience into a Embedded Software Engineer position}
+
+% Area of Interest
+\newcommand{\InterestShow}{show}
+\newcommand{\interest}{Embedded System, Internet of Thing, Computer Network}
+
+% Education
+\newcommand{\EducationShow}{show}
+
+% Institute A
+\newcommand{\instNameA}{San Jose State University}
+\newcommand{\instLocationA}{San Jose, CA}
+\newcommand{\degreeTypeA}{Master of Science}
+\newcommand{\majorA}{Computer Engineering}
+\newcommand{\overallGPAA}{}
+\newcommand{\rankingA}{}
+\newcommand{\instDateA}{Jan. 2016 to Dec 2017}
+\newcommand{\instAdvisorA}{}
+\newcommand{\courseA}{Operating System, Computer Architecture}
+
+% Institute B
+\newcommand{\instNameB}{National Taiwan University}
+\newcommand{\instLocationB}{Taipei, Taiwan}
+\newcommand{\degreeTypeB}{Master of Science}
+\newcommand{\majorB}{Communication Engineering}
+\newcommand{\overallGPAB}{}
+\newcommand{\rankingB}{}
+\newcommand{\instDateB}{Sep. 2010 to June 2012}
+\newcommand{\instAdvisorB}{ZseHong,Tsai}
+\newcommand{\courseB}{Queueing Theory, Computer Simulation}
+
+% Institute C
+\newcommand{\instNameC}{National Chiao Tung University}
+\newcommand{\instLocationC}{HsinChu, Taiwan}
+\newcommand{\degreeTypeC}{Bachelor of Science}
+\newcommand{\majorC}{Electrical Engineering}
+\newcommand{\overallGPAC}{}
+\newcommand{\rankingC}{}
+\newcommand{\instDateC}{Sep. 2006 to June 2010}
+\newcommand{\instAdvisorC}{}
+\newcommand{\courseC}{Computer Networking, Data Structure}
+
+% Institute D
+\newcommand{\instNameD}{}
+\newcommand{\instLocationD}{}
+\newcommand{\degreeTypeD}{}
+\newcommand{\majorD}{}
+\newcommand{\overallGPAD}{}
+\newcommand{\rankingD}{}
+\newcommand{\instDateD}{}
+\newcommand{\instAdvisorD}{}
+\newcommand{\courseD}{}
+
+
+% Work Experience
+\newcommand{\WorkExperienceShow}{show}
+
+\newcommand{\WorkTitleA}{Senior Engineer}
+\newcommand{\WorkAffiliationA}{ASUS,co.}
+\newcommand{\WorkDateA}{Mar. 2013 to Dec. 2015}
+\newcommand{\WorkDescriptionA}{Android Bootloader, Build environment, Device Security:DM-verity, Root protection, Regulating power consumption, Linux driver porting}
+
+\newcommand{\WorkTitleB}{}
+\newcommand{\WorkAffiliationB}{}
+\newcommand{\WorkDateB}{}
+\newcommand{\WorkDescriptionB}{}
+
+\newcommand{\WorkTitleC}{}
+\newcommand{\WorkAffiliationC}{}
+\newcommand{\WorkDateC}{}
+\newcommand{\WorkDescriptionC}{}
+
+\newcommand{\WorkTitleD}{}
+\newcommand{\WorkAffiliationD}{}
+\newcommand{\WorkDateD}{}
+\newcommand{\WorkDescriptionD}{}
+
+\newcommand{\WorkTitleE}{}
+\newcommand{\WorkAffiliationE}{}
+\newcommand{\WorkDateE}{}
+\newcommand{\WorkDescriptionE}{}
+
+
+
+% Skills
+\newcommand{\SkillsShow}{show}
+
+\newcommand{\ProgrammingLanguages}{C/C++, Python }
+\newcommand{\OperatingSystems}{Windows, Linux, Mac}
+\newcommand{\Tools}{Git and Repo, GNU Makefile, BASH Script}
+\newcommand{\Languages}{Chinese(native), English (fluent), Taiwanese(native)}
+
+% Extracurricular Activities
+
+\newcommand{\ActivitiesShow}{show}
+
+\newcommand{\ActivityTitleA}{Oversea Bicycle Trips}
+\newcommand{\ActivityEventA}{Event}
+\newcommand{\ActivityDateA}{2010, 2012}
+\newcommand{\ActivityDescriptionA}{Cycling with myself from Xian to Urumuqi, 2010. From Kolkata to Delhi, via Sikkim and Nepal}
+
+\newcommand{\ActivityTitleB}{Member}
+\newcommand{\ActivityEventB}{NCTU Baseball Team}
+\newcommand{\ActivityDateB}{2006-2010}
+\newcommand{\ActivityDescriptionB}{Catcher, Vice leader during 2008-2009}
+
+\newcommand{\ActivityTitleC}{}
+\newcommand{\ActivityEventC}{}
+\newcommand{\ActivityDateC}{}
+\newcommand{\ActivityDescriptionC}{}
+
+\newcommand{\ActivityTitleD}{}
+\newcommand{\ActivityEventD}{}
+\newcommand{\ActivityDateD}{}
+\newcommand{\ActivityDescriptionD}{}
+
+\newcommand{\ActivityTitleE}{}
+\newcommand{\ActivityEventE}{}
+\newcommand{\ActivityDateE}{}
+\newcommand{\ActivityDescriptionE}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\fontfamily{phv}\LARGE\selectfont\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{1pt}
+	{\fontfamily{phv}\selectfont\large\textbf{#1}}
+	\begin{itemize}
+	\vspace{2pt}
+}{
+	\end{itemize}
+}
+
+\newcommand{\condressectionBegin}[2]
+{
+\ifthenelse{\equal{#2}{show}}{
+	\vspace{1pt}
+	{\fontfamily{phv}\selectfont\large\textbf{#1}}
+	\begin{itemize}
+	\vspace{2pt}
+}{}
+}
+\newcommand{\condressectionEnd}[1]
+{
+\ifthenelse{\equal{#1}{show}}{\end{itemize}}{}
+}
+
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-2pt}
+	\item \begin{quote} #1 \end{quote}
+    \vspace{-2pt}
+}
+
+\newcommand{\condresitem}[3]
+{
+\ifthenelse{\equal{#3}{\empty} \or \equal{#2}{hide}}{}{\resitem{#1}}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-2pt}
+	\item \begin{quote} #1 \end{quote}
+    \vspace{-2pt}
+}
+
+\newcommand{\condressubitem}[2]
+{
+\ifthenelse{\equal{#1}{\empty} \or \equal{#2}{hide}}{}{\ressubitem{#1}}
+}
+
+\newcommand{\resbigitem}[3]{
+	%\vspace{-5pt}
+	\item
+    \vspace{-1pt}
+	\textbf{#1} #2 \hfill #3
+    \vspace{-2pt}
+}
+
+\newcommand{\paper}[3]{
+	\vspace{-1pt}
+	\item
+    \begin{quote}
+    #1, ``\textbf{#2}," \textit{#3}
+    \end{quote}
+    \vspace{-1pt}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[2]{
+	\resbigitem{#1}{#2}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+\newcommand{\condressubsecBegin}[3]
+{
+\ifthenelse{\equal{#1}{\empty}}{
+}{	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+	\begin{itemize}
+}
+}
+
+\newcommand{\condressubsecEnd}[1]
+{
+\ifthenelse{\equal{#1}{\empty}}{}{\end{itemize}}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the main part of the resume:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%\fontfamily{ppl} \selectfont
+
+% Name with horizontal rule
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Personal Information
+%    Specify your name and contact information
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bigname{\name}
+
+\vspace{-8pt} \rule{\textwidth}{2pt}
+
+\vspace{-1pt} {
+\begin{flushright}
+\footnotesize \addr \\
+ \footnotesize Mobile: \cellphone\\
+\footnotesize E-mail: \email \\
+\end{flushright}}
+\vspace{4 pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective
+%    State your goal for this resume
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\condressectionBegin{Objective}{\ObjectiveShow}
+    \condresitem{\Objective}{\ObjectiveShow}{Objective}
+\condressectionEnd{\ObjectiveShow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Area of Interests
+%    List a few (up to five) research fields of your interests.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\condressectionBegin{Area of Interests}{\InterestShow}
+    \condresitem{\interest}{\InterestShow}{\interest}
+\condressectionEnd{\InterestShow}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Education
+%    List your undergraduate and graduate (if applicable) educational background
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\condressectionBegin{Education}{\EducationShow}
+	\condressubsecBegin{\instNameA}{\instLocationA}{\instDateA}
+		\condresitem{\degreeTypeA~ in~\majorA}{\EducationShow}{\degreeTypeA}
+                        \condresitem{GPA Overall: \overallGPAA}{\EducationShow}{\overallGPAA}
+		\condresitem{Ranking: No. \rankingA}{\EducationShow}{\rankingA}
+		\condresitem{Advisor: \instAdvisorA}{\EducationShow}{\instAdvisorA}
+		\condresitem{Courses: \courseA}{\EducationShow}{\courseA}
+	\condressubsecEnd{\instNameA}
+
+	\condressubsecBegin{\instNameB}{\instLocationB}{\instDateB}
+		\condresitem{\degreeTypeB~in~\majorB}{\EducationShow}{\degreeTypeB}
+              \condresitem{GPA Overall: \overallGPAB}{\EducationShow}{\overallGPAB}
+		\condresitem{Ranking: No. \rankingB}{\EducationShow}{\rankingB}
+		\condresitem{Advisor: \instAdvisorB}{\EducationShow}{\instAdvisorB}
+		\condresitem{Courses: \courseB}{\EducationShow}{\courseB}
+	\condressubsecEnd{\instNameB}
+
+	\condressubsecBegin{\instNameC}{\instLocationC}{\instDateC}
+		\condresitem{\degreeTypeC~in~\majorC}{\EducationShow}{\degreeTypeC}
+               \condresitem{GPA Overall: \overallGPAC}{\EducationShow}{\overallGPAC}
+		\condresitem{Ranking: No. \rankingC}{\EducationShow}{\rankingC}
+		\condresitem{Advisor: \instAdvisorC}{\EducationShow}{\instAdvisorC}
+		\condresitem{Courses: \courseC}{\EducationShow}{\courseC}
+	\condressubsecEnd{\instNameC}
+
+	\condressubsecBegin{\instNameD}{\instLocationD}{\instDateD}
+		\condresitem{\degreeTypeD~in~\majorD}{\EducationShow}{\degreeTypeD}
+                        \condresitem{GPA Overall: \overallGPAD}{\EducationShow}{\overallGPAD}
+		\condresitem{Ranking: No. \rankingD}{\EducationShow}{\rankingD}
+		\condresitem{Advisor: \instAdvisorD}{\EducationShow}{\instAdvisorD}
+		\condresitem{Courses: \courseD}{\EducationShow}{\courseD}
+	\condressubsecEnd{\instNameD}
+
+\condressectionEnd{\EducationShow}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Working and Teaching Experience
+%    A summary of your previous working and teaching experience, containing  
+% 1. The title of the job
+% 2. The affiliation 
+% 3. Period
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\condressectionBegin{Working Experience}{\WorkExperienceShow}
+
+	\condressubsecBegin{\WorkTitleA}{\WorkAffiliationA}{\WorkDateA}
+		\condresitem{\WorkDescriptionA}{\WorkExperienceShow}{\WorkDescriptionA}
+	\condressubsecEnd{\WorkTitleA}
+
+	\condressubsecBegin{\WorkTitleB}{\WorkAffiliationB}{\WorkDateB}
+		\condresitem{\WorkDescriptionB}{\WorkExperienceShow}{\WorkDescriptionB}
+	\condressubsecEnd{\WorkTitleB}
+
+	\condressubsecBegin{\WorkTitleC}{\WorkAffiliationC}{\WorkDateC}
+		\condresitem{\WorkDescriptionC}{\WorkExperienceShow}{\WorkDescriptionC}
+	\condressubsecEnd{\WorkTitleC}
+
+	\condressubsecBegin{\WorkTitleD}{\WorkAffiliationD}{\WorkDateD}
+		\condresitem{\WorkDescriptionD}{\WorkExperienceShow}{\WorkDescriptionD}
+	\condressubsecEnd{\WorkTitleD}
+
+	\condressubsecBegin{\WorkTitleE}{\WorkAffiliationE}{\WorkDateE}
+		\condresitem{\WorkDescriptionE}{\WorkExperienceShow}{\WorkDescriptionE}
+	\condressubsecEnd{\WorkTitleE}
+
+\condressectionEnd{\WorkExperienceShow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Publications
+%    List selected publications (if applicable)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following is optional.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Technical Skills
+%    List technical skills you are familiar with.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\condressectionBegin{Skills}{\SkillsShow}
+
+	\condresitem{Programming Languages: \ProgrammingLanguages}{\SkillsShow}{\ProgrammingLanguages}
+	\condresitem{Operating Systems: \OperatingSystems}{\SkillsShow}{\OperatingSystems}
+	\condresitem{Tools: \Tools}{\SkillsShow}{\Tools}
+	\condresitem{Languages: \Languages}{\SkillsShow}{\Languages}
+
+\condressectionEnd{\SkillsShow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Extracurricular Activities
+%    List extracurricular activities that you have been involved with
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\condressectionBegin{Extracurricular Activities}{\ActivitiesShow}
+
+	\condressubsecBegin{\ActivityTitleA}{\ActivityEventA}{\ActivityDateA}
+		\condresitem{\ActivityDescriptionA}{\ActivitiesShow}{\ActivityDescriptionA}
+	\condressubsecEnd{\ActivityTitleA}
+
+	\condressubsecBegin{\ActivityTitleB}{\ActivityEventB}{\ActivityDateB}
+		\condresitem{\ActivityDescriptionB}{\ActivitiesShow}{\ActivityDescriptionB}
+	\condressubsecEnd{\ActivityTitleB}
+
+	\condressubsecBegin{\ActivityTitleC}{\ActivityEventC}{\ActivityDateC}
+		\condresitem{\ActivityDescriptionC}{\ActivitiesShow}{\ActivityDescriptionC}
+	\condressubsecEnd{\ActivityTitleC}
+
+	\condressubsecBegin{\ActivityTitleD}{\ActivityEventD}{\ActivityDateD}
+		\condresitem{\ActivityDescriptionD}{\ActivitiesShow}{\ActivityDescriptionD}
+	\condressubsecEnd{\ActivityTitleD}
+
+	\condressubsecBegin{\ActivityTitleE}{\ActivityEventE}{\ActivityDateE}
+		\condresitem{\ActivityDescriptionE}{\ActivitiesShow}{\ActivityDescriptionE}
+	\condressubsecEnd{\ActivityTitleE}
+
+\condressectionEnd{\WorkExperienceShow}
+
+\end{document}
